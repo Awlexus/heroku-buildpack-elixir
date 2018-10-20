@@ -28,7 +28,7 @@ function load_config() {
   echo $custom_config_file
   for file in `ls $build_path`
   do
-    output_section(file)
+    output_section $file
   done
 
   # Source for default versions file from buildpack first
