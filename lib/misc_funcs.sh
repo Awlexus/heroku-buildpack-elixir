@@ -26,7 +26,10 @@ function load_config() {
 
   local custom_config_file="${build_path}/elixir_buildpack.config"
   echo $custom_config_file
-  echo `ls -l .`
+  for file in `ls $build_path`
+  do
+    output_section(file)
+  done
 
   # Source for default versions file from buildpack first
   source "${build_pack_path}/elixir_buildpack.config"
